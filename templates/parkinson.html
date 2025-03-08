@@ -1,0 +1,213 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRIME PREDICTION </title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+    <link rel="icon" href="static/images/favicon.png" type="image/png">
+    
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+    </style>
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+</head>
+
+<body>
+    <div class="hero_area">
+    
+        <header class="header_section">
+          <div class="header_bottom">
+            <div class="container-fluid">
+              <nav class="navbar navbar-expand-lg custom_nav-container">
+                <a class="navbar-brand" href="index">
+                  <span>
+                    CRIME PREDICTION
+                  </span>
+                </a>
+    
+                <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+                  <ul class="navbar-nav   ">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="index">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="index#analysis">Analysis</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="index#team">Team Members</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="signup"> Sign Up </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="signin"> Sign In </a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </header>
+        <!-- end header section -->
+    <header>
+        <h1 class = "title bg-dark">Crime Rate Prediction System</h1>
+    </header>
+    <center><img src="static/images/Crime_logo.jpg"></center>
+    <section class="section1">
+        <form action="test" method="POST">
+            {% csrf_token %}
+            <table class="table1">
+                <tr>
+                    <td class="label">
+                        <label>Select City Name</label>
+                    </td>
+                    <td class="sel">
+                        <select name="city">
+                            <option value="1">Bengaluru</option>
+                            <option value="0">Ahmedabad</option>
+                            <option value="2">Chennai</option>
+                            <option value="3">Coimbatore</option>
+                            <option value="4">Delhi</option>
+                            <option value="5">Ghaziabad</option>
+                            <option value="6">Hyderabad</option>
+                            <option value="7">Indore</option>
+                            <option value="8">Jaipur</option>
+                            <option value="9">Kanpur</option>
+                            <option value="10">Kochi</option>
+                            <option value="11">Kolkata</option>
+                            <option value="12">Kozhikode</option>
+                            <option value="13">Lucknow</option>
+                            <option value="14">Mumbai</option>
+                            <option value="15">Nagpur</option>
+                            <option value="16">Patna</option>
+                            <option value="17">Pune</option>
+                            <option value="18">Surat</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="label">
+                        <label>Select Crime Type</label>
+                    </td>
+                    <td class="sel">
+                        <select name="crime">
+                            <option value="9">Murder</option>
+                            <option value="8">Kidnapping</option>
+                            <option value="7">Economic Offences</option>
+                            <option value="6">Cyber Crimes</option>
+                            <option value="5">Crime against women</option>
+                            <option value="4">Crime against children</option>
+                            <option value="3">Crime against Senior Citizen</option>
+                            <option value="2">Crime against ST</option>
+                            <option value="1">Crime against SC</option>
+                            <option value="0">Crime Committed by Juveniles</option>
+                        </select>
+                    </td>                  
+                </tr>
+
+                <tr>
+                    <td class="label">
+                        <label>Select Year</label>
+                    </td>
+                    <td class="sel" >
+                        <select name="year" id="year-dropdown"></select>
+                    </td> 
+                </tr>
+                <tr>
+                  <td class="label">
+                      <label>Select Month</label>
+                  </td>
+                  <td class="sel">
+                      <select name="month">
+                        <option value="1">JANUARY</option>
+                        <option value="2">FEBRUARY</option>
+                        <option value="3">MARCH</option>
+                        <option value="4">APRIL</option>
+                        <option value="5">MAY</option>
+                        <option value="6">JUNE</option>
+                        <option value="7">JULY</option>
+                        <option value="8">AUGUST</option>
+                        <option value="9">SEPTEMBER</option>
+                        <option value="10">OCTOBER</option>
+                        <option value="11">NOVEMBER</option>
+                        <option value="12">DECEMBER</option>
+                          
+                          
+                          
+                          
+                          
+                          
+                          
+                          
+                          
+                          
+                          
+                      </select>
+                  </td>                  
+              </tr>
+            </table>
+
+            <div class="button" >
+                <input type="submit" class="btn id="predict_button"" value="Predict" >
+            </div>               
+        </form>          
+    </section>    
+
+    <section>
+        <h2 id="about">About the Application</h2>
+
+        <p id="introduction">
+            Crime rate prediction has become an important tool for law enforcement agencies 
+            to help them better understand patterns of crime and anticipate where crime is 
+            likely to occur. By predicting future crime trends, law enforcement agencies can 
+            better allocate resources to areas that are likely to experience increases in 
+            criminal activity. This could lead to a decrease in crime overall, as well as 
+            an increase in public safety. Additionally, crime rate prediction can help police 
+            departments develop better strategies for responding to crime as it happens.
+            <br> <br>
+            The dataset is prepared manually based on the publication available on the Indian 
+            National Crime Rate Bureau (NCRB) official website. This data provides statistics 
+            on crimes committed in 19 metropolitan cities during the year 2014 to 2021. 
+            With the help of this application, we can predict the crime rates for 10 different 
+            categories of crime that are likely to occur in 19 Indian metropolitan cities over 
+            the next few years. It includes statistics on 10 different categories of crime, 
+            including murder, kidnapping, crime against women, crime against children, 
+            crime committed by juveniles, crime against senior citizens, crime against SC, 
+            crime against ST, economic offences and cyber crimes. 
+            <br><br>
+            The system uses scikit-learn's Random Forest Regression model, which takes year, 
+            city name, and crime type data as inputs. Random Forest Regression is a type of 
+            an ensemble learning techniques that can be used to predict continuous values 
+            from a collection of data. It works by creating a large number of "decision trees" 
+            which each make a prediction about the target variable. Then it averages all the 
+            predictions to come up with a final prediction. This makes it more accurate than 
+            a single decision tree. The model predicts the crime rate with an accuracy of 93.20% 
+            on testing dataset.
+            <br><br>
+            
+
+        </p>
+    </section>
+
+
+    <script src="{% static 'js/main.js' %}"></script>    
+</body>
+</html>

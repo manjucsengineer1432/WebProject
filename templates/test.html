@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRIME PREDICTION </title>
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+    <link rel="icon" href="static/images/favicon.png" type="image/png">
+    
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+    </style>
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+</head>
+
+<body>
+    <div class="hero_area">
+        <header class="header_section">
+          <div class="header_bottom">
+            <div class="container-fluid">
+              <nav class="navbar navbar-expand-lg custom_nav-container">
+                <a class="navbar-brand" href="index">
+                  <span>
+                    CRIME PREDICTION
+                  </span>
+                </a>
+    
+                <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+                  <ul class="navbar-nav  ">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="index">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="index#analysis">Analysis</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="index#team">Team Members</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="signup"> Sign Up </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="signin"> Sign In </a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </header>
+        <!-- end header section -->
+    <header >
+        <h1 class = "title bg-dark">Crime Rate Predictor</h1>
+        <h2 class = "tagline bg-dark">Lets reduce crime rate</h2>
+    </header>       
+    
+    <section class="prediction">
+        <table class="table2">
+            <tr class="r1">
+                <td class="label">
+                    <label>Selected City Name :</label>
+                </td>
+                <td class="sel">
+                    <select>
+                        <option value="selected">{{city_name}}</option>
+                </td>
+            </tr>
+            <tr class="r1">
+                <td class="label">
+                    <label>Selected Crime Type :</label>
+                </td>
+                <td class="sel">
+                    <select >
+                        <option value="selected">{{crime_type}}</option>
+                </td>
+            </tr>
+            <tr class="r1">
+                <td class="label">
+                    <label>Selected Year :</label>
+                </td>
+                <td class="sel">
+                    <select>
+                        <option value="selected">{{year}}</option>
+                </td>
+            </tr>
+          <tr class="r1">
+              <td class="label">
+                  <label>Selected Month :</label>
+              </td>
+              <td class="sel">
+                  <select>
+                      <option value="selected">{{month}}</option>
+                  </select>
+              </td>
+          </tr>
+          
+        </table>
+
+        <table class="table3">         
+            
+            <tr class="r2"> 
+                <td class="result">Prediction :</td>
+                <td class="result">{{crime_status}}</td>
+            </tr>
+            <tr class="r2">
+                <td class="result">Estimated Crime Rate :</td>
+                <td class="result">{{crime_rate}}</td>
+            </tr>
+            <tr class="r2">
+                <td class="result">Estimated Number of Cases :</td>
+                <td class="result">{{cases}}</td>
+            </tr>
+            <tr class="r2">
+                <td class="result">Population (in Lakhs) :</td>
+                <td class="result">{{population}}</td>
+            </tr>
+        </table>
+        <div>
+
+        <span class="button2" >
+            <a href="parkinson">
+                <input type="submit" class="btn id"check_again="" value="Let's Check Again" >
+            </a>            
+        </span>
+      
+        <span class="button2" >
+            <a href="index">
+                <input type="submit" class="btn id"check_again="" value="Logout" >
+            </a>            
+        </span>
+      </div>
+    </section>
+
+ 
+</body>
+</html>
